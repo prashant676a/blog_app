@@ -1,0 +1,42 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+venv/
+env/
+env36/
+.env
+
+# Ignore local development settings
+*.sqlite3
+*.pyc
+*.log
+*.bak
+*.swp
+
+# Ignore media uploads
+media/
+
+# Ignore static files
+staticfiles/
+
+# Ignore environment-specific files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore compiled JavaScript files
+/build/
+
+# Ignore local npm packages
+/node_modules/
+
+# Ignore macOS system files
+.DS_Store
