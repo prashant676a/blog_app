@@ -1,22 +1,34 @@
 // src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Register from './components/Register';
-import Login from './components/Login';
-import Profile from './components/Profile';
-import Logout from './components/Logout';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import React from "react";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Profile from "./components/Profile";
+import Register from "./components/Register";
 
 function App() {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/register" component={Register} />
-                {/* <Route path="/login" component={Login} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/logout" component={Logout} /> */}
-            </Switch>
-        </Router>
-    );
+  return (
+    <>
+    
+    <NoteState>
+      <Router>
+        <Navbar />
+        <div className="container">
+
+        <Routes>
+          
+          <Route exact path="/register" element={<Register />}></Route>
+          <Route exact path="/logout" element={<Logout />}></Route>
+          <Route exact path="/login" element={<Login/>}></Route>
+          <Route exact path="/profile" element={<Profile />} ></Route>
+        </Routes>
+        </div>
+      </Router>
+      </NoteState>
+    </>
+  );
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom'; // for routing
+import { useNavigate } from 'react-router-dom'; // for routing
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ function Register() {
     password: '',
   });
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +22,7 @@ function Register() {
       console.log(response.data); // View response data (including tokens)
 
       // Handle successful registration (e.g., display success message)
-      history.push('/login'); // Redirect to login page
+      navigate('/login'); // Redirect to login page
     } catch (error) {
       console.error(error.response.data); // Access detailed error from backend
       // Display user-friendly error message
